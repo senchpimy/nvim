@@ -8,24 +8,22 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
-    " File Explorer
-    Plug 'scrooloose/NERDTree'
-    Plug 'preservim/nerdtree'
-    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    " Auto pairs for '(' '[' '{'
-    Plug 'jiangmiao/auto-pairs'
-    Plug 'tpope/vim-surround'
-    " Enviroment 
-    Plug 'vim-airline/vim-airline'
-    Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-    Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
+    	" File Explorer
+	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+    	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
+	Plug 'https://github.com/nvim-telescope/telescope.nvim'
+    	" Auto pairs for '(' '[' '{'
+	Plug 'kylechui/nvim-surround'
+    	" Enviroment 
+    	Plug 'vim-airline/vim-airline'
+    	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+    	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
+	Plug 'senchpimy/dashboard-vim'
 
-    Plug 'jreybert/vimagit'
-    Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-    " Plug 'ryanoasis/vim-devicons' Icons without colours
-    Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-"    Plug 'mhinz/vim-startify'
-    Plug 'glepnir/dashboard-nvim'
+    	Plug 'jreybert/vimagit'
+	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+    	" Plug 'ryanoasis/vim-devicons' Icons without colours
+	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
     
     "Autocompletion
     Plug 'neovim/nvim-lspconfig'
