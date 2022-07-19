@@ -2,9 +2,11 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 set number relativenumber
 set nu ru
 let g:Hexokinase_highlighters = ['backgroundfull']
-nmap <space>r :RnvimrToggle<CR>
-nmap <space>q :q <bar>:q
-nmap <space>p :CocCommand markdown-preview-enhanced.openPreview
+let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript','lua','py']
+nmap <space>r <cmd>RnvimrToggle<CR>
+nmap <space>q <cmd>q <bar><cmd>q
+nmap <space>p <cmd>CocCommand markdown-preview-enhanced.openPreview
+nnoremap <space>v <cmd>CHADopen<cr>
 colorscheme pywal
 "///////////////////////////////////////////////////////////////////////////////
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some

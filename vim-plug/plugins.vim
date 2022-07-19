@@ -19,6 +19,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
     	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 	Plug 'senchpimy/dashboard-vim'
+	Plug 'farmergreg/vim-lastplace'
+	Plug 'Yggdroot/indentLine'
 
     	Plug 'jreybert/vimagit'
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
