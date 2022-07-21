@@ -11,7 +11,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     	" File Explorer
 	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
     	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-	Plug 'https://github.com/nvim-telescope/telescope.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     	" Auto pairs for '(' '[' '{'
 	Plug 'kylechui/nvim-surround'
     	" Enviroment 
