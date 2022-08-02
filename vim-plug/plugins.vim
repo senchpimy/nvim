@@ -2,8 +2,6 @@
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  "autocmd VimEnter * PlugInstall
-  "autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
@@ -14,19 +12,24 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     	" Auto pairs for '(' '[' '{'
-	Plug 'kylechui/nvim-surround'
+	Plug 'tpope/vim-surround'
     	" Enviroment 
-    	Plug 'vim-airline/vim-airline'
+    	Plug 'vim-airline/vim-airline' "ojo que empexamos
     	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
     	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 	Plug 'senchpimy/dashboard-vim'
 	Plug 'farmergreg/vim-lastplace'
 	Plug 'Yggdroot/indentLine'
-
+	"Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+	"Plug 'norcalli/nvim-colorizer.lua'
+	Plug 'lambdalisue/suda.vim'
+	Plug 'nvim-lualine/lualine.nvim'
     	Plug 'jreybert/vimagit'
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
     	" Plug 'ryanoasis/vim-devicons' Icons without colours
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+	Plug 'lervag/vimtex'
+	Plug 'dpelle/vim-LanguageTool'
     
     "Autocompletion
     Plug 'neovim/nvim-lspconfig'
