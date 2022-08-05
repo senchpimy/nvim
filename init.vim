@@ -6,8 +6,8 @@ nmap <space>r <cmd>RnvimrToggle<CR>
 nmap <space>q <cmd>q <bar><cmd>q
 nmap <space>p <cmd>CocCommand markdown-preview-enhanced.openPreview
 nnoremap <space>v <cmd>CHADopen<cr>
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = '▛'
+let g:airline_right_sep = '▟'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 colorscheme pywal
 "///////////////////////////////////////////////////////////////////////////////
