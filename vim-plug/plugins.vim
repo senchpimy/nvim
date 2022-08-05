@@ -10,6 +10,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
     	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 	Plug 'nvim-lua/plenary.nvim'
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     	" Auto pairs for '(' '[' '{'
 	Plug 'tpope/vim-surround'
