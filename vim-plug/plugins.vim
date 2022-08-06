@@ -10,21 +10,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
     	Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
 	Plug 'nvim-lua/plenary.nvim'
-	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     	" Auto pairs for '(' '[' '{'
 	Plug 'tpope/vim-surround'
     	" Enviroment 
-    	Plug 'vim-airline/vim-airline' "ojo que empexamos
+	Plug 'nvim-lualine/lualine.nvim'
     	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
     	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 	Plug 'senchpimy/dashboard-vim'
 	Plug 'farmergreg/vim-lastplace'
 	Plug 'Yggdroot/indentLine'
+	Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+	Plug 'https://github.com/phaazon/hop.nvim'
+	Plug 'https://github.com/romainl/vim-cool'
+	Plug 'https://github.com/lewis6991/gitsigns.nvim'
 	"Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-	"Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'lambdalisue/suda.vim'
-	Plug 'nvim-lualine/lualine.nvim'
     	Plug 'jreybert/vimagit'
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
     	" Plug 'ryanoasis/vim-devicons' Icons without colours
