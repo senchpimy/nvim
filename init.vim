@@ -3,14 +3,26 @@ set number relativenumber
 set nu ru
 let g:Hexokinase_highlighters = ['backgroundfull']
 nmap <space>r <cmd>RnvimrToggle<CR>
-nmap <space>q <cmd>q <bar><cmd>q
 nmap <space>p <cmd>CocCommand markdown-preview-enhanced.openPreview
 nnoremap <space>v <cmd>CHADopen<cr>
 "let g:airline_left_sep = '▛'
 "let g:airline_right_sep = '▟'
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_enabled = 0
 colorscheme pywal
-"///////////////////////////////////////////////////////////////////////////////
+nmap <space>l <cmd>IndentLinesToggle<CR>
+let g:mkdp_browser = 'qutebrowser'
+nmap <C-m> <cmd>MarkdownPreview<CR>
+nmap <C-o> <cmd>Telescope oldfiles<CR>
+nmap <C-b> <cmd>Telescope buffers<CR>
+nmap <space>f <cmd>Telescope find_files<CR>
+"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+lua << END
+require('lualine').setup()
+require('gitsigns').setup()
+require'hop'.setup()
+END
+"////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -160,6 +172,3 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-lua << END
-require('lualine').setup()
-END

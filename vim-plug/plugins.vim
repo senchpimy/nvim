@@ -24,19 +24,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/phaazon/hop.nvim'
 	Plug 'https://github.com/romainl/vim-cool'
 	Plug 'https://github.com/lewis6991/gitsigns.nvim'
-	"Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 	Plug 'lambdalisue/suda.vim'
-    	Plug 'jreybert/vimagit'
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-    	" Plug 'ryanoasis/vim-devicons' Icons without colours
-	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
-	Plug 'lervag/vimtex'
-	Plug 'dpelle/vim-LanguageTool'
+	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } " CONFIG
+	Plug 'ray-x/guihua.lua'  "lua GUI lib
+	Plug 'ray-x/sad.nvim'
     
     "Autocompletion
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+"	Plug 'neovim/nvim-lspconfig'
+"	Plug 'ms-jpq/coq_nvim'
+	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	"	TEST
+"	https://github.com/kylechui/nvim-surround
+"	mattn/emmet-vim
+"	AndrewRadev/tagalong.vim
+"	mbbill/undotree
+"	https://github.com/dkarter/bullets.vim
+"	https://github.com/wellle/targets.vim
 call plug#end()
 
