@@ -16,11 +16,21 @@ nmap <C-m> <cmd>MarkdownPreview<CR>
 nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
+nmap <C-h> <cmd>HopWord<CR>
+
+set mouse=a
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 lua << END
 require('lualine').setup()
-require('gitsigns').setup()
-require'hop'.setup()
+--require('gitsigns').setup()
+require('hop').setup()
+local db = require('dashboard')
+require("lf").setup(
+              {
+                  escape_quit = true,
+                  border = "rounded",
+              }
+          )
 END
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 " Some servers have issues with backup files, see #649.
