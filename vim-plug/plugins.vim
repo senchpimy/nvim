@@ -28,8 +28,8 @@ Plug 'https://github.com/glepnir/dashboard-nvim'
 	Plug 'lambdalisue/suda.vim'
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } " CONFIG
-	Plug 'ray-x/guihua.lua'  "lua GUI lib
-	Plug 'ray-x/sad.nvim'
+"	Plug 'ray-x/guihua.lua'  "lua GUI lib
+"	Plug 'ray-x/sad.nvim'
     
     "Autocompletion
 "	Plug 'neovim/nvim-lspconfig'
@@ -42,6 +42,30 @@ Plug 'https://github.com/glepnir/dashboard-nvim'
 "	mbbill/undotree
 "	https://github.com/dkarter/bullets.vim
 "	https://github.com/wellle/targets.vim
+"	https://github.com/folke/which-key.nvim
+"	https://github.com/lewis6991/impatient.nvim
+"	https://github.com/feline-nvim/feline.nvim
+"	https://github.com/xuhdev/vim-latex-live-preview
+"	https://github.com/mfussenegger/nvim-treehopper
+"	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
+"	https://github.com/andweeb/presence.nvim
+"	https://github.com/nvim-treesitter/nvim-treesitter
+"	https://github.com/Shougo/echodoc.vim
+"	https://github.com/tenfyzhong/CompleteParameter.vim
+"	https://github.com/Raimondi/delimitMate
+"	https://github.com/Shougo/neopairs.vim
+"	https://github.com/preservim/tagbar /// https://github.com/tenfyzhong/tagbar-makefile.vim
+"	https://github.com/t9md/vim-choosewin
+"	https://github.com/itchyny/vim-cursorword
+"	https://github.com/terryma/vim-expand-region
+"	https://github.com/andymass/vim-matchup
+"	https://github.com/simnalamburt/vim-mundo
+"	https://github.com/ycm-core/YouCompleteMe
+"	https://github.com/tree-sitter/tree-sitter
+"	https://github.com/psliwka/vim-smoothie
+"	https://github.com/sheerun/vim-polyglot
+"	https://github.com/lewis6991/impatient.nvim
+"	https://github.com/dhruvasagar/vim-table-mode
     	Plug 'akinsho/toggleterm.nvim'
     	Plug 'lmburns/lf.nvim'
 call plug#end()
