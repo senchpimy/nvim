@@ -34,6 +34,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     
     "Autocompletion
 	"Plug 'neovim/nvim-lspconfig'
+	"lazigit.nvim https://github.com/kdheepak/lazygit.nvim
 	"Plug 'ms-jpq/coq_nvim'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"	TEST

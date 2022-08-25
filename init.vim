@@ -12,7 +12,7 @@ let g:indentLine_enabled = 0
 colorscheme pywal
 nmap <space>l <cmd>IndentLinesToggle<CR>
 let g:mkdp_browser = 'qutebrowser'
-nmap <C-m> <cmd>MarkdownPreview<CR>
+nmap <C-p> <cmd>MarkdownPreview<CR>
 nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
@@ -25,12 +25,26 @@ require('lualine').setup()
 --require('gitsigns').setup()
 require('hop').setup()
 local db = require('dashboard')
-require("lf").setup(
-              {
-                  escape_quit = true,
-                  border = "rounded",
-              }
-          )
+  db.preview_command="chafa -c 256 --fg-only --symbols braille"
+  db.preview_file_path ="~/Pictures/Gifs/1643830177621.gif"
+  db.custom_footer={" "}
+  db.preview_file_height = 25
+  db.preview_file_width = 100
+  db.custom_center = {
+      {icon = '  ',
+      desc = 'Recently opened files                   ',
+      action =  'Telescope oldfiles',
+      shortcut = 'SPC f h'},
+      {icon = '  ',
+      desc = 'Find  File                              ',
+      action = 'Telescope find_files find_command=rg,--hidden,--files',
+      shortcut = 'SPC f f'},
+      {icon = '  ',
+      desc ='File Browser                            ',
+      action =  'RnvimrToggle',
+      shortcut = 'SPC f b'},
+    }
+
 END
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 " Some servers have issues with backup files, see #649.
