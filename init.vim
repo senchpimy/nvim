@@ -1,8 +1,14 @@
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
 source $HOME/.config/nvim/vim-plug/plugins.vim
 set number relativenumber
 set nu ru
 let g:Hexokinase_highlighters = ['backgroundfull']
-nmap <space>r <cmd>RnvimrToggle<CR>
+nmap <space>r <cmd>Lf<CR>
 nmap <space>p <cmd>CocCommand markdown-preview-enhanced.openPreview
 nnoremap <space>v <cmd>CHADopen<cr>
 "let g:airline_left_sep = '▛'
@@ -17,6 +23,8 @@ nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
 nmap <C-h> <cmd>HopWord<CR>
+
+"g:echodoc#enable_at_startup=1
 
 set mouse=a
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -41,7 +49,7 @@ local db = require('dashboard')
       shortcut = 'SPC f f'},
       {icon = '  ',
       desc ='File Browser                            ',
-      action =  'RnvimrToggle',
+      action =  'Lf',
       shortcut = 'SPC f b'},
     }
 
