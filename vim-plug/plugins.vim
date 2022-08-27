@@ -11,7 +11,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     	" Auto pairs for '(' '[' '{'
-	Plug 'tpope/vim-surround'
+	Plug 'tpope/vim-surround' "+++
     	" Enviroment 
 	Plug 'nvim-lualine/lualine.nvim'
     	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -44,12 +44,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/nvim-treesitter/nvim-treesitter
 	Plug 'https://github.com/Shougo/echodoc.vim' "+++
 "	https://github.com/Raimondi/delimitMate
+"	vim-repeat
 	Plug 'https://github.com/Shougo/neopairs.vim' "+++
 "	https://github.com/preservim/tagbar /// https://github.com/tenfyzhong/tagbar-makefile.vim
 	Plug 'https://github.com/t9md/vim-choosewin' "+++
 	Plug 'https://github.com/itchyny/vim-cursorword' "+++
-"	https://github.com/terryma/vim-expand-region
+	Plug 'https://github.com/terryma/vim-expand-region' "+++
 	Plug 'https://github.com/andymass/vim-matchup' "+++
+	"zepl.vim
+	"mucomplete
+	"vim-mucomplete-minisnip
+	"float-preview-nvim
+	"vim-minisnip
+	"vim-tmux-navigator
+	"spaceway.vim
+	"vim-troff
+	"speeddating.vim
 "	https://github.com/tree-sitter/tree-sitter
 "	https://github.com/sheerun/vim-polyglot
 	Plug 'https://github.com/lewis6991/impatient.nvim' "+++
