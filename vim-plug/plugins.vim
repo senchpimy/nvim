@@ -12,8 +12,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'}
     	Plug 'lmburns/lf.nvim'
-    	" Auto pairs for '(' '[' '{'
-	Plug 'tpope/vim-surround' "+++
     	" Enviroment 
 	Plug 'nvim-lualine/lualine.nvim'
     	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -35,11 +33,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	"	TEST
 "	https://github.com/kylechui/nvim-surround
-	Plug 'mattn/emmet-vim' "+++
-	Plug 'https://github.com/dkarter/bullets.vim' "+++
+	Plug 'mattn/emmet-vim' "+
+	Plug 'https://github.com/dkarter/bullets.vim' 
 	Plug 'https://github.com/wellle/targets.vim' "+++
 	Plug 'https://github.com/folke/which-key.nvim' "+++
-	Plug 'https://github.com/lewis6991/impatient.nvim' "+++
+	Plug 'https://github.com/lewis6991/impatient.nvim' 
+	Plug 'tpope/vim-surround' "+++
 "	https://github.com/mfussenegger/nvim-treehopper
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
 "	https://github.com/nvim-treesitter/nvim-treesitter
@@ -51,7 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/t9md/vim-choosewin' "+++
 	Plug 'https://github.com/itchyny/vim-cursorword' "+++
 	Plug 'https://github.com/terryma/vim-expand-region' "+++
-	Plug 'https://github.com/andymass/vim-matchup' "+++
+	Plug 'https://github.com/andymass/vim-matchup' 
 	"zepl.vim
 	"mucomplete
 	"vim-mucomplete-minisnip
@@ -63,9 +62,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	"speeddating.vim
 "	https://github.com/tree-sitter/tree-sitter
 "	https://github.com/sheerun/vim-polyglot
-	Plug 'https://github.com/lewis6991/impatient.nvim' "+++
 "	https://github.com/dpelle/vim-LanguageTool
 	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
-	Plug 'https://github.com/dhruvasagar/vim-table-mode' "+++
+	Plug 'https://github.com/dhruvasagar/vim-table-mode' 
 call plug#end()
 
