@@ -27,6 +27,29 @@ nmap <C-h> <cmd>HopWord<CR>
 "g:echodoc#enable_at_startup=1
 
 set mouse=a
+"Emmet
+let g:user_emmet_install_global = 0
+let g:user_emmet_mode='a'    "enable all function in all mode.
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_settings = {
+\  'html': {
+\    'default_attributes': {
+\      'option': {'value': v:null},
+\      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
+\    },
+\    'snippets': {
+\      'descplug':"<h1>\n"
+\	  	."\t${child}|\n"
+\               ."<h1>\n"
+\               ."<div class=\"text\">\n"
+\		."<a href=\"https://github.com/\"></a>\n"
+\               ."</div>\n"
+\               ."<div class=\"codigo\">\n"
+\               ."</div>\n"
+\    },
+\  },
+\}
+
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 lua << END
 require('lualine').setup()
