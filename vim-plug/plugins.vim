@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'}
+    	Plug 'lmburns/lf.nvim'
     	" Auto pairs for '(' '[' '{'
 	Plug 'tpope/vim-surround' "+++
     	" Enviroment 
@@ -26,7 +28,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'lambdalisue/suda.vim'
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } 
-	"Plug 'ray-x/guihua.lua'  "lua GUI lib
     "Autocompletion
 	"Plug 'neovim/nvim-lspconfig'
 	"lazigit.nvim https://github.com/kdheepak/lazygit.nvim
@@ -66,7 +67,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/dpelle/vim-LanguageTool
 	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
 	Plug 'https://github.com/dhruvasagar/vim-table-mode' "+++
-	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'}
-    	Plug 'lmburns/lf.nvim'
 call plug#end()
 

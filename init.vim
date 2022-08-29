@@ -52,7 +52,12 @@ local db = require('dashboard')
       action =  'Lf',
       shortcut = 'SPC f b'},
     }
-
+require("lf").setup({
+default_cmd = "lfrun",
+height = 0.65, -- height of the *floating* window
+width = 0.75, -- width of the *floating* window
+escape_quit = true,
+})
 END
 "////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 " Some servers have issues with backup files, see #649.
