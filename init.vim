@@ -11,6 +11,10 @@ set number relativenumber
 set nu ru
 let mapleader="|"
 
+"Choosewin
+nmap  -  <Plug>(choosewin)
+let g:choosewin_overlay_enable = 1
+
 "Colores
 let g:Hexokinase_highlighters = ['backgroundfull']
 colorscheme pywal
@@ -35,6 +39,8 @@ nmap <C-h> <cmd>HopWord<CR>
 "g:echodoc#enable_at_startup=1
 
 "set mouse=a
+"Targets
+let g:targets_aiAI = ['<Space>a', '<Space>i', '<Space>A', '<Space>I']
 
 "Emmet
 let g:user_emmet_install_global = 0
@@ -47,15 +53,20 @@ let g:user_emmet_settings = {
 \      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
 \    },
 \    'snippets': {
-\      'descplug':"<h1>\n\t${child}|\n</h1>\n<div class=\"text\">\n<a href=\"https://github.com/\"></a>\n</div>\n<div class=\"codigo\">\n</div>"
+\      'descplug':"<h1>\n\t${child}|\n</h1>\n<div class=\"texto\">\n<a href=\"https://github.com/\"></a>\n</div>\n<div class=\"codigo\">\n</div>"
 \    },
 \  },
 \}
 
+"Bufferline
+noremap <silent><TAB> :BufferLineCycleNext<CR>
+noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 require('lualine').setup()
---require('gitsigns').setup()
+
+require('gitsigns').setup()
+
 require('hop').setup()
 local db = require('dashboard')
   db.preview_command="chafa -c 256 --fg-only --symbols braille"
@@ -77,12 +88,16 @@ local db = require('dashboard')
       action =  'Lf',
       shortcut = 'SPC f b'},
     }
+
 require("lf").setup({
 default_cmd = "lfrun",
 height = 0.65, -- height of the *floating* window
 width = 0.75, -- width of the *floating* window
 escape_quit = true,
 })
+
 require('impatient')
+
+require("bufferline").setup{}
 END
 "////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////////////////
