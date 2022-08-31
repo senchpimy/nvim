@@ -11,7 +11,7 @@ set number relativenumber
 set nu ru
 let mapleader="|"
 
-set timeoutlen=50
+set timeoutlen=150
 
 "Choosewin
 nmap  -  <Plug>(choosewin)
@@ -38,8 +38,6 @@ nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
 nmap nh <cmd>HopWord<CR>
 
-"g:echodoc#enable_at_startup=1
-
 set mouse=a
 "Targets
 let g:targets_aiAI = ['<Space>a', '<Space>i', '<Space>A', '<Space>I']
@@ -63,10 +61,19 @@ let g:user_emmet_settings = {
 "Bufferline
 noremap <silent><TAB> :BufferLineCycleNext<CR>
 noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
+
+"Neopairs
+v:completed_item
+g:neopairs#enable
+g:neopairs#pairs
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --require ("lsp.init")
 
+--Winbar
+require('winbar').setup()
+
+--LUALINE
 require('lualine').setup()
 
 --WHICH-KEY

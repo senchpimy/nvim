@@ -29,6 +29,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/itchyny/vim-cursorword' 
 	Plug 'https://github.com/t9md/vim-choosewin' 
 	Plug 'https://github.com/folke/which-key.nvim' 
+	Plug 'tpope/vim-surround' 
+
+
 	"	Configure
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
 	Plug 'mattn/emmet-vim' "+
@@ -51,8 +54,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
 	"	TEST
-	Plug 'tpope/vim-surround' "+++
-	Plug 'https://github.com/Shougo/echodoc.vim' "+++
 	Plug 'https://github.com/Shougo/neopairs.vim' "+++
 	Plug 'https://github.com/terryma/vim-expand-region' "+++
 	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
