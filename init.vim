@@ -11,6 +11,8 @@ set number relativenumber
 set nu ru
 let mapleader="|"
 
+set timeoutlen=50
+
 "Choosewin
 nmap  -  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
@@ -66,12 +68,19 @@ lua << END
 --require ("lsp.init")
 
 require('lualine').setup()
+
+--WHICH-KEY
+require("which-key").setup {}
+
+--TOGGLETERM
+require("toggleterm").setup()
+
 --Gitsigns
 require('gitsigns').setup {
   signs = {
-    add          = {hl = 'GitSignsAdd'   , text = '│', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
-    change       = {hl = 'GitSignsChange', text = '│', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
-    delete       = {hl = 'GitSignsDelete', text = '_', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
+    add          = {hl = 'GitSignsAdd'   , text = 'a', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
+    change       = {hl = 'GitSignsChange', text = 'c', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
+    delete       = {hl = 'GitSignsDelete', text = 'd', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
     topdelete    = {hl = 'GitSignsDelete', text = '‾', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
     changedelete = {hl = 'GitSignsChange', text = '~', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
   },

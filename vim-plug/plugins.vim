@@ -10,12 +10,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'}
     	Plug 'lmburns/lf.nvim'
     	" Enviroment 
 	Plug 'nvim-lualine/lualine.nvim'
     	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-    	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' }
 	Plug 'https://github.com/glepnir/dashboard-nvim'
 	Plug 'farmergreg/vim-lastplace'
 	Plug 'Yggdroot/indentLine'
@@ -23,7 +21,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 	Plug 'https://github.com/phaazon/hop.nvim'
 	Plug 'https://github.com/romainl/vim-cool'
-	Plug 'https://github.com/lewis6991/gitsigns.nvim'
 	Plug 'lambdalisue/suda.vim'
 	Plug 'https://github.com/dkarter/bullets.vim' 
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
@@ -31,10 +28,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/lewis6991/impatient.nvim' 
 	Plug 'https://github.com/itchyny/vim-cursorword' 
 	Plug 'https://github.com/t9md/vim-choosewin' 
+	Plug 'https://github.com/folke/which-key.nvim' 
 	"	Configure
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
 	Plug 'mattn/emmet-vim' "+
 	Plug 'https://github.com/wellle/targets.vim' "+
+	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
+	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
+    	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' } "++
 	"Autocomplete
 	Plug 'rafamadriz/friendly-snippets'
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
@@ -50,11 +51,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
 	"	TEST
-	Plug 'https://github.com/folke/which-key.nvim' "+++
 	Plug 'tpope/vim-surround' "+++
 	Plug 'https://github.com/Shougo/echodoc.vim' "+++
 	Plug 'https://github.com/Shougo/neopairs.vim' "+++
 	Plug 'https://github.com/terryma/vim-expand-region' "+++
+	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
 "	https://github.com/kylechui/nvim-surround
 "	https://github.com/mfussenegger/nvim-treehopper
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
@@ -62,9 +63,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/Raimondi/delimitMate
 "	vim-repeat
 "	https://github.com/preservim/tagbar /// https://github.com/tenfyzhong/tagbar-makefile.vim
-	"Plug 'neovim/nvim-lspconfig'
-	"lazigit.nvim https://github.com/kdheepak/lazygit.nvim
-	"Plug 'ms-jpq/coq_nvim'
 	"zepl.vim
 	"mucomplete
 	"vim-mucomplete-minisnip
@@ -76,7 +74,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	"speeddating.vim
 "	https://github.com/tree-sitter/tree-sitter
 "	https://github.com/sheerun/vim-polyglot
-"	rafamadriz/friendly-snippets
 "	https://github.com/dpelle/vim-LanguageTool
 "	https://github.com/ThePrimeagen/harpoon
 "	https://github.com/is0n/jaq-nvim
@@ -92,12 +89,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/MattesGroeger/vim-bookmarks
 "	https://github.com/monaqa/dial.nvim
 "	https://github.com/michaelb/sniprun
-"	https://github.com/hrsh7th/nvim-cmp
-"	https://github.com/hrsh7th/cmp-buffer
 "	https://github.com/windwp/nvim-autopairs
 "	https://github.com/justinmk/vim-sneak
 "	https://github.com/Shougo/deoplete.nvim
-"	https://github.com/akinsho/toggleterm.nvim
-	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
 call plug#end()
 
