@@ -27,7 +27,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'lambdalisue/suda.vim'
 	Plug 'https://github.com/dkarter/bullets.vim' 
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'https://github.com/andymass/vim-matchup' 
 	Plug 'https://github.com/lewis6991/impatient.nvim' 
 	Plug 'https://github.com/itchyny/vim-cursorword' 
@@ -40,11 +39,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'rafamadriz/friendly-snippets'
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'hrsh7th/cmp-nvim-lsp'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
+
+	Plug 'https://github.com/neovim/nvim-lspconfig'
+	Plug 'https://github.com/williamboman/nvim-lsp-installer'
+	Plug 'hrsh7th/cmp-nvim-lsp'
 	"	TEST
 	Plug 'https://github.com/folke/which-key.nvim' "+++
 	Plug 'tpope/vim-surround' "+++
