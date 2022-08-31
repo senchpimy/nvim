@@ -62,16 +62,12 @@ let g:user_emmet_settings = {
 noremap <silent><TAB> :BufferLineCycleNext<CR>
 noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
 
-"Neopairs
-v:completed_item
-g:neopairs#enable
-g:neopairs#pairs
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --require ("lsp.init")
 
 --Winbar
-require('winbar').setup()
+--require('winbar').setup()
 
 --LUALINE
 require('lualine').setup()

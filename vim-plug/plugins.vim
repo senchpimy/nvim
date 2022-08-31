@@ -30,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/t9md/vim-choosewin' 
 	Plug 'https://github.com/folke/which-key.nvim' 
 	Plug 'tpope/vim-surround' 
+	Plug 'https://github.com/anuvyklack/hydra.nvim' 
 
 
 	"	Configure
@@ -54,15 +55,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
 	"	TEST
-	Plug 'https://github.com/Shougo/neopairs.vim' "+++
-	Plug 'https://github.com/terryma/vim-expand-region' "+++
-	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
-"	https://github.com/kylechui/nvim-surround
+"	Plug 'https://github.com/fgheng/winbar.nvim'
+"	Plug 'https://github.com/terryma/vim-expand-region' "+++
 "	https://github.com/mfussenegger/nvim-treehopper
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
 "	https://github.com/nvim-treesitter/nvim-treesitter
 "	https://github.com/Raimondi/delimitMate
-"	vim-repeat
 "	https://github.com/preservim/tagbar /// https://github.com/tenfyzhong/tagbar-makefile.vim
 	"zepl.vim
 	"mucomplete
@@ -72,14 +70,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	"vim-tmux-navigator
 	"spaceway.vim
 	"vim-troff
-	"speeddating.vim
 "	https://github.com/tree-sitter/tree-sitter
 "	https://github.com/sheerun/vim-polyglot
 "	https://github.com/dpelle/vim-LanguageTool
 "	https://github.com/ThePrimeagen/harpoon
 "	https://github.com/is0n/jaq-nvim
 "	https://github.com/j-hui/fidget.nvim
-"	https://github.com/fgheng/winbar.nvim
 "	https://github.com/ghillb/cybu.nvim
 "	https://github.com/RRethy/vim-illuminate
 "	https://github.com/michaelb/sniprun
