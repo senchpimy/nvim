@@ -27,12 +27,21 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'lambdalisue/suda.vim'
 	Plug 'https://github.com/dkarter/bullets.vim' 
 	Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'https://github.com/andymass/vim-matchup' 
 	Plug 'https://github.com/lewis6991/impatient.nvim' 
 	Plug 'https://github.com/itchyny/vim-cursorword' 
 	Plug 'https://github.com/t9md/vim-choosewin' 
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } 
+	"Autocomplete
+	Plug 'rafamadriz/friendly-snippets'
+	Plug 'https://github.com/L3MON4D3/LuaSnip'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
 	"	TEST
 	Plug 'mattn/emmet-vim' "+
 	Plug 'https://github.com/wellle/targets.vim' "+
@@ -78,6 +87,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/MattesGroeger/vim-bookmarks
 "	https://github.com/monaqa/dial.nvim
 "	https://github.com/michaelb/sniprun
+"	https://github.com/hrsh7th/nvim-cmp
+"	https://github.com/hrsh7th/cmp-buffer
+"	https://github.com/windwp/nvim-autopairs
+"	https://github.com/justinmk/vim-sneak
+"	https://github.com/Shougo/deoplete.nvim
+"	https://github.com/akinsho/toggleterm.nvim
 	Plug 'https://github.com/anuvyklack/hydra.nvim' "+++
 call plug#end()
 
