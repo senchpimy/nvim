@@ -32,7 +32,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/lewis6991/impatient.nvim' 
 	Plug 'https://github.com/itchyny/vim-cursorword' 
 	Plug 'https://github.com/t9md/vim-choosewin' 
-	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } 
+	"	Configure
+	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
+	Plug 'mattn/emmet-vim' "+
+	Plug 'https://github.com/wellle/targets.vim' "+
 	"Autocomplete
 	Plug 'rafamadriz/friendly-snippets'
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
@@ -43,8 +46,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
 	"	TEST
-	Plug 'mattn/emmet-vim' "+
-	Plug 'https://github.com/wellle/targets.vim' "+
 	Plug 'https://github.com/folke/which-key.nvim' "+++
 	Plug 'tpope/vim-surround' "+++
 	Plug 'https://github.com/Shougo/echodoc.vim' "+++
