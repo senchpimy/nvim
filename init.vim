@@ -34,11 +34,11 @@ nnoremap <space>v <cmd>CHADopen<cr>
 nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
-nmap <C-h> <cmd>HopWord<CR>
+nmap nh <cmd>HopWord<CR>
 
 "g:echodoc#enable_at_startup=1
 
-"set mouse=a
+set mouse=a
 "Targets
 let g:targets_aiAI = ['<Space>a', '<Space>i', '<Space>A', '<Space>I']
 
