@@ -66,6 +66,19 @@ noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
 lua << END
 --require ("lsp.init")
 
+--Hydra
+local Hydra = require('hydra')
+require('hydra.keymap-util')
+Hydra({
+    name = "Windows",
+    hint = [[False]], 
+--    config = {...}
+    mode = 'n',
+    body = '<C-w>',
+    heads = {{'+','<Cmd>res +3<CR>'},{'-'},{'<','<Cmd>vertical resize -3<CR>'},{'>','<Cmd>vertical resize +3<CR>'},
+    {'s','<Cmd>wincmd s<CR>'},{'l',''},{'v','<Cmd>wincmd v<CR>'},{'w','<Cmd>wincmd w<CR>'},{'j','<Cmd>wincmd j<CR>'},{'r','<Cmd>wincmd r<CR>'}},
+})
+
 --Winbar
 --require('winbar').setup()
 
