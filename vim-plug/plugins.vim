@@ -47,6 +47,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/neovim/nvim-lspconfig'
 	Plug 'https://github.com/williamboman/nvim-lsp-installer'
 	Plug 'hrsh7th/cmp-nvim-lsp'
+
+
 	"	TEST
 	Plug 'https://github.com/folke/which-key.nvim' "+++
 	Plug 'tpope/vim-surround' "+++
