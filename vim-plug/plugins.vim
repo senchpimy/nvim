@@ -78,9 +78,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/j-hui/fidget.nvim
 "	https://github.com/ghillb/cybu.nvim
 "	https://github.com/RRethy/vim-illuminate
-"	https://github.com/michaelb/sniprun
 "	https://github.com/lervag/vimtex
-"	https://github.com/karb94/neoscroll.nvim
 "	https://github.com/williamboman/mason.nvim
 "	https://github.com/nvim-pack/nvim-spectre
 "	https://github.com/MattesGroeger/vim-bookmarks

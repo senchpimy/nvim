@@ -11,7 +11,7 @@ set number relativenumber
 set nu ru
 let mapleader="|"
 
-set timeoutlen=150
+set timeoutlen=2000
 
 "Choosewin
 nmap  -  <Plug>(choosewin)
