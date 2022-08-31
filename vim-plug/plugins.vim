@@ -55,37 +55,25 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
 	"	TEST
+	Plug 'https://github.com/ThePrimeagen/harpoon'
+	Plug 'https://github.com/is0n/jaq-nvim'
+	Plug 'https://github.com/j-hui/fidget.nvim'
+	Plug 'https://github.com/ghillb/cybu.nvim'
+	Plug 'https://github.com/RRethy/vim-illuminate'
+	Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
+	Plug 'https://github.com/Raimondi/delimitMate'
+	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
+	Plug 'https://github.com/windwp/nvim-autopairs'
 "	Plug 'https://github.com/fgheng/winbar.nvim'
-"	Plug 'https://github.com/terryma/vim-expand-region' "+++
-"	https://github.com/mfussenegger/nvim-treehopper
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
-"	https://github.com/nvim-treesitter/nvim-treesitter
-"	https://github.com/Raimondi/delimitMate
 "	https://github.com/preservim/tagbar /// https://github.com/tenfyzhong/tagbar-makefile.vim
-	"zepl.vim
-	"mucomplete
-	"vim-mucomplete-minisnip
-	"float-preview-nvim
-	"vim-minisnip
-	"vim-tmux-navigator
 	"spaceway.vim
-	"vim-troff
 "	https://github.com/tree-sitter/tree-sitter
 "	https://github.com/sheerun/vim-polyglot
 "	https://github.com/dpelle/vim-LanguageTool
-"	https://github.com/ThePrimeagen/harpoon
-"	https://github.com/is0n/jaq-nvim
-"	https://github.com/j-hui/fidget.nvim
-"	https://github.com/ghillb/cybu.nvim
-"	https://github.com/RRethy/vim-illuminate
 "	https://github.com/lervag/vimtex
 "	https://github.com/williamboman/mason.nvim
 "	https://github.com/nvim-pack/nvim-spectre
-"	https://github.com/MattesGroeger/vim-bookmarks
-"	https://github.com/monaqa/dial.nvim
-"	https://github.com/michaelb/sniprun
-"	https://github.com/windwp/nvim-autopairs
 "	https://github.com/justinmk/vim-sneak
-"	https://github.com/Shougo/deoplete.nvim
 call plug#end()
 
