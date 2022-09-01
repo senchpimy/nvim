@@ -14,7 +14,7 @@ let mapleader="|"
 set timeoutlen=2000
 
 "Choosewin
-nmap  -  <Plug>(choosewin)
+nmap  n-  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "Colores
@@ -62,6 +62,9 @@ let g:user_emmet_settings = {
 noremap <silent><TAB> :BufferLineCycleNext<CR>
 noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
 
+"Harpoon
+nmap <leader>+ <Cmd>lua require("harpoon.mark").add_file()<CR> <bar> <Cmd>echo 'File added to harpoon'<CR>
+nmap <leader>- <Cmd>lua require("harpoon.mark").rm_file()<CR> <bar> <Cmd>echo 'File removed from harpoon'<CR>
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --require ("lsp.init")
@@ -157,6 +160,8 @@ require('gitsigns').setup {
 }
 -- HOP
 require('hop').setup()
+
+--DASHBOARD
 local db = require('dashboard')
   db.preview_command="chafa -c 256 --fg-only --symbols braille"
   db.preview_file_path ="~/Pictures/Gifs/1643830177621.gif"
@@ -166,16 +171,16 @@ local db = require('dashboard')
   db.custom_center = {
       {icon = '  ',
       desc = 'Recently opened files                   ',
-      action =  'Telescope oldfiles',
-      shortcut = 'SPC f h'},
+      action =  'Telescope oldfiles',},
       {icon = '  ',
       desc = 'Find  File                              ',
-      action = 'Telescope find_files find_command=rg,--hidden,--files',
-      shortcut = 'SPC f f'},
+      action = 'Telescope find_files find_command=rg,--hidden,--files',},
       {icon = '  ',
       desc ='File Browser                            ',
-      action =  'Lf',
-      shortcut = 'SPC f b'},
+      action =  'Lf',},
+      {icon = '⇁  ',
+      desc ='Harpoon                                ',
+      action =  'lua require("harpoon.ui").toggle_quick_menu()',}
     }
 
 require("lf").setup({
