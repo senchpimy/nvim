@@ -71,9 +71,5 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 "	https://github.com/tree-sitter/tree-sitter
 "	https://github.com/sheerun/vim-polyglot
 "	https://github.com/dpelle/vim-LanguageTool
-"	https://github.com/lervag/vimtex
-"	https://github.com/williamboman/mason.nvim
-"	https://github.com/nvim-pack/nvim-spectre
-"	https://github.com/justinmk/vim-sneak
 call plug#end()
 
