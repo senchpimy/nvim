@@ -31,15 +31,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/folke/which-key.nvim' 
 	Plug 'tpope/vim-surround' 
 	Plug 'https://github.com/anuvyklack/hydra.nvim' 
+	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'https://github.com/ThePrimeagen/harpoon'
 
-
-	"	Configure
-	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
-	Plug 'mattn/emmet-vim' "+
-	Plug 'https://github.com/wellle/targets.vim' "+
-	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
-	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
-    	Plug 'AlphaTechnolog/pywal.nvim', { 'as': 'pywal' } "++
 	"Autocomplete
 	Plug 'rafamadriz/friendly-snippets'
 	Plug 'https://github.com/L3MON4D3/LuaSnip'
@@ -53,11 +47,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/williamboman/nvim-lsp-installer'
 	Plug 'hrsh7th/cmp-nvim-lsp'
 
+	"	Configure
+	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
+	Plug 'mattn/emmet-vim' "+
+	Plug 'https://github.com/wellle/targets.vim' "+
+	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
+	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
 
 	"	TEST
-	Plug 'https://github.com/ThePrimeagen/harpoon'
 	Plug 'https://github.com/is0n/jaq-nvim'
-	Plug 'https://github.com/j-hui/fidget.nvim'
 	Plug 'https://github.com/ghillb/cybu.nvim'
 	Plug 'https://github.com/RRethy/vim-illuminate'
 	Plug 'https://github.com/Raimondi/delimitMate'

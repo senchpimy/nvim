@@ -19,7 +19,7 @@ let g:choosewin_overlay_enable = 1
 
 "Colores
 let g:Hexokinase_highlighters = ['backgroundfull']
-colorscheme pywal
+colorscheme dracula 
 
 "Indetlines
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
@@ -68,6 +68,9 @@ nmap <leader>- <Cmd>lua require("harpoon.mark").rm_file()<CR> <bar> <Cmd>echo 'F
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --require ("lsp.init")
+
+--ILUMMINATE
+require('illuminate').configure()
 
 --Hydra
 local Hydra = require('hydra')
