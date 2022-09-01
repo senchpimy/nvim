@@ -68,15 +68,37 @@ lua << END
 
 --Hydra
 local Hydra = require('hydra')
-require('hydra.keymap-util')
+local window_hint = [[
+^ ^^ Move     ^^Size   ^^   ^^Split   ^^   ^^Buffers
+^ ^-------^^  ^^------^^   ^^----------^^ ^^---------
+^^   ^^ _k_ ^^      ^^ _+_   ^ ^^  ^^_s_: horiz^^  ^^_r_: Inter
+^ _h_ ^^ _w_^ ^ _l_ ^^  ^^_<_^^   ^^_>_  ^^  ^^_v_: vert^^   ^^_H_: Hor2Vert
+^^   ^^ _j_ ^^      ^^ _-_   ^^   ^^_Q_: cerrar^^ ^^_J_:Vert2Hor
+	            ^^_=_: igual^   
+]]
 Hydra({
-    name = "Windows",
-    hint = [[False]], 
---    config = {...}
+   name = "Windows",
+   hint=window_hint,
+--   config = {},
     mode = 'n',
     body = '<C-w>',
-    heads = {{'+','<Cmd>res +3<CR>'},{'-'},{'<','<Cmd>vertical resize -3<CR>'},{'>','<Cmd>vertical resize +3<CR>'},
-    {'s','<Cmd>wincmd s<CR>'},{'l',''},{'v','<Cmd>wincmd v<CR>'},{'w','<Cmd>wincmd w<CR>'},{'j','<Cmd>wincmd j<CR>'},{'r','<Cmd>wincmd r<CR>'}},
+    heads = {
+    {'+','<Cmd>res +3<CR>',{desc='Aumentar horizontal'}},
+    {'-','<Cmd>res -3<CR>',{desc='Disminuir horizontal'}},
+    {'=','<Cmd>wincmd =<CR>',{desc='Igualar horizontal'}},
+    {'<','<Cmd>vertical resize -3<CR>',{desc='Disminuir vertical'}},
+    {'>','<Cmd>vertical resize +3<CR>',{desc='Aumentar vertical'}},
+    {'s','<Cmd>wincmd s<CR>',{desc='Dividir Horizontal'}},
+    {'l','<Cmd>wincmd l<CR>',{desc='Navegar Izquierda'}},
+    {'h','<Cmd>wincmd h<CR>',{desc='Navegar Derecha'}},
+    {'v','<Cmd>wincmd v<CR>',{desc='Dividr Vertical'}},
+    {'w','<Cmd>wincmd w<CR>',{desc='Intercambiar cursor'}},
+    {'j','<Cmd>wincmd j<CR>',{desc='Navegar Abajo'}},
+    {'r','<Cmd>wincmd r<CR>',{desc='Intercambiar los buffers'}},
+    {'k','<Cmd>wincmd k<CR>',{desc='Navegar Arriba'}},
+    { 'Q', '<Cmd>try | close | catch | endtry<CR>' ,{desc='Cerrar buffer'}},
+    {'H','<Cmd>wincmd H<CR>',{desc='Pasar de horizontal a vertical '}},
+    {'J','<Cmd>wincmd J<CR>',{desc='Pasar de vertical a horizontal'}}},
 })
 
 --Winbar

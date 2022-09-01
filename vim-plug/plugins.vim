@@ -60,16 +60,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/j-hui/fidget.nvim'
 	Plug 'https://github.com/ghillb/cybu.nvim'
 	Plug 'https://github.com/RRethy/vim-illuminate'
-	Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
 	Plug 'https://github.com/Raimondi/delimitMate'
 	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 	Plug 'https://github.com/windwp/nvim-autopairs'
-"	Plug 'https://github.com/fgheng/winbar.nvim'
-"	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
-"	https://github.com/preservim/tagbar /// https://github.com/tenfyzhong/tagbar-makefile.vim
-	"spaceway.vim
+	Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
 "	https://github.com/tree-sitter/tree-sitter
+" 	https://github.com/lervag/vimtex
+"	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
+	"spaceway.vim
 "	https://github.com/sheerun/vim-polyglot
 "	https://github.com/dpelle/vim-LanguageTool
+"	Plug 'https://github.com/fgheng/winbar.nvim'
 call plug#end()
 
