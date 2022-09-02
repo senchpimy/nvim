@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/anuvyklack/hydra.nvim' 
 	Plug 'dracula/vim', { 'as': 'dracula' }
 	Plug 'https://github.com/ThePrimeagen/harpoon'
+	Plug 'https://github.com/RRethy/vim-illuminate'
 
 	"Autocomplete
 	Plug 'rafamadriz/friendly-snippets'
@@ -57,12 +58,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	"	TEST
 	Plug 'https://github.com/is0n/jaq-nvim'
 	Plug 'https://github.com/ghillb/cybu.nvim'
-	Plug 'https://github.com/RRethy/vim-illuminate'
 	Plug 'https://github.com/Raimondi/delimitMate'
+	Plug 'https://github.com/j-hui/fidget.nvim'
 	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 	Plug 'https://github.com/windwp/nvim-autopairs'
 	Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
 "	https://github.com/tree-sitter/tree-sitter
+"	https://github.com/sindrets/winshift.nvim
 " 	https://github.com/lervag/vimtex
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
 	"spaceway.vim
