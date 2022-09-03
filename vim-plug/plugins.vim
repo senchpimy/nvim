@@ -13,7 +13,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     	Plug 'lmburns/lf.nvim'
     	" Enviroment 
 	Plug 'nvim-lualine/lualine.nvim'
-    	Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'https://github.com/glepnir/dashboard-nvim'
 	Plug 'farmergreg/vim-lastplace'
 	Plug 'Yggdroot/indentLine'
@@ -36,6 +36,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/RRethy/vim-illuminate'
 	Plug 'https://github.com/is0n/jaq-nvim'
 	Plug 'https://github.com/Raimondi/delimitMate'
+	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
+	Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+	Plug 'https://github.com/p00f/nvim-ts-rainbow'
+	Plug 'https://github.com/xuhdev/vim-latex-live-preview'
 
 	"Autocomplete
 	Plug 'rafamadriz/friendly-snippets'
@@ -53,22 +57,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	"	Configure
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
+	Plug 'https://github.com/sindrets/winshift.nvim' "+++
 	Plug 'mattn/emmet-vim' "+
 	Plug 'https://github.com/wellle/targets.vim' "+
 	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
+"	Plug 'https://github.com/fgheng/winbar.nvim'
 
 	"	TEST
-	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
-	Plug 'https://github.com/windwp/nvim-autopairs'
-	Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
-"	https://github.com/tree-sitter/tree-sitter
-"	https://github.com/sindrets/winshift.nvim
-" 	https://github.com/lervag/vimtex
+	Plug 'https://github.com/dpelle/vim-LanguageTool'
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
+"	https://github.com/CRAG666/code_runner.nvim
 	"spaceway.vim
-"	https://github.com/sheerun/vim-polyglot
-"	https://github.com/dpelle/vim-LanguageTool
-"	Plug 'https://github.com/fgheng/winbar.nvim'
 call plug#end()
 

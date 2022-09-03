@@ -18,7 +18,8 @@ nmap  n-  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "Colores
-let g:Hexokinase_highlighters = ['backgroundfull']
+
+set termguicolors
 colorscheme dracula 
 
 "Indetlines
@@ -68,9 +69,70 @@ nmap <leader>- <Cmd>lua require("harpoon.mark").rm_file()<CR> <bar> <Cmd>echo 'F
 
 "Jaq
 nmap <leader>r <Cmd>Jaq<CR>
+
+"Latex-live-preview
+let g:livepreview_previewer = 'zathura'
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --require ("lsp.init")
+
+--Whinshifto
+require("winshift").setup({
+  highlight_moving_win = true,  -- Highlight the window being moved
+  focused_hl_group = "Visual",  -- The highlight group used for the moving window
+  moving_win_options = {
+    -- These are local options applied to the moving window while it's
+    -- being moved. They are unset when you leave Win-Move mode.
+    wrap = false,
+    cursorline = false,
+    cursorcolumn = false,
+    colorcolumn = "",
+  },
+  keymaps = {
+    disable_defaults = false, -- Disable the default keymaps
+    win_move_mode = {
+      ["h"] = "left",
+      ["j"] = "down",
+      ["k"] = "up",
+      ["l"] = "right",
+      ["H"] = "far_left",
+      ["J"] = "far_down",
+      ["K"] = "far_up",
+      ["L"] = "far_right",
+      ["<left>"] = "left",
+      ["<down>"] = "down",
+      ["<up>"] = "up",
+      ["<right>"] = "right",
+      ["<S-left>"] = "far_left",
+      ["<S-down>"] = "far_down",
+      ["<S-up>"] = "far_up",
+      ["<S-right>"] = "far_right",
+    },
+  },})
+
+--Nvim-colorizer
+require'colorizer'.setup()
+
+--Nvim-Tresitter
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = { "c", "lua", "rust","latex","python","go","html","css","markdown" },
+
+  sync_install = false,
+
+  auto_install = true,
+
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false,
+  },
+   rainbow = {
+    enable = true,
+    disable = { "html" },
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean 
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    colors = {"#FF0000","#00FFFF","#FF00FF","#FFFF00","#00FF00"}, 
+  }
+}
 
 --Fidget
 require"fidget".setup{}
