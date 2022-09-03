@@ -34,6 +34,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'dracula/vim', { 'as': 'dracula' }
 	Plug 'https://github.com/ThePrimeagen/harpoon'
 	Plug 'https://github.com/RRethy/vim-illuminate'
+	Plug 'https://github.com/is0n/jaq-nvim'
+	Plug 'https://github.com/Raimondi/delimitMate'
 
 	"Autocomplete
 	Plug 'rafamadriz/friendly-snippets'
@@ -47,6 +49,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/neovim/nvim-lspconfig'
 	Plug 'https://github.com/williamboman/nvim-lsp-installer'
 	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'https://github.com/j-hui/fidget.nvim'
 
 	"	Configure
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
@@ -56,10 +59,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
 
 	"	TEST
-	Plug 'https://github.com/is0n/jaq-nvim'
-	Plug 'https://github.com/ghillb/cybu.nvim'
-	Plug 'https://github.com/Raimondi/delimitMate'
-	Plug 'https://github.com/j-hui/fidget.nvim'
 	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 	Plug 'https://github.com/windwp/nvim-autopairs'
 	Plug 'https://github.com/nvim-treesitter/nvim-treesitter'

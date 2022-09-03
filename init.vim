@@ -65,9 +65,64 @@ noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
 "Harpoon
 nmap <leader>+ <Cmd>lua require("harpoon.mark").add_file()<CR> <bar> <Cmd>echo 'File added to harpoon'<CR>
 nmap <leader>- <Cmd>lua require("harpoon.mark").rm_file()<CR> <bar> <Cmd>echo 'File removed from harpoon'<CR>
+
+"Jaq
+nmap <leader>r <Cmd>Jaq<CR>
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --require ("lsp.init")
+
+--Fidget
+require"fidget".setup{}
+
+--JAQ
+require('jaq-nvim').setup{
+  cmds = {
+    internal = {
+      lua = "luafile %",
+      vim = "source %"
+    },
+
+    external = {
+      markdown = "glow %",
+      python   = "python3 %",
+      go       = "go run %",
+      sh       = "sh %",
+      rust       = "cargo run "
+    }
+  },
+
+  behavior = {
+    default     = "float",
+    startinsert = false,
+    wincmd      = false,
+    autosave    = false
+  },
+
+  ui = {
+    float = {
+      border    = "none",
+      winhl     = "Normal",
+      borderhl  = "FloatBorder",
+      winblend  = 0,
+      height    = 0.8,
+      width     = 0.8,
+      x         = 0.5,
+      y         = 0.5
+    },
+
+    terminal = {
+      position = "bot",
+      size     = 10,
+      line_no  = false
+    },
+
+    quickfix = {
+      position = "bot",
+      size     = 10
+    }
+  }}
+
 
 --ILUMMINATE
 require('illuminate').configure()
