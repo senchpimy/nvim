@@ -40,20 +40,21 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'https://github.com/p00f/nvim-ts-rainbow'
 	Plug 'https://github.com/xuhdev/vim-latex-live-preview'
+	Plug 'https://github.com/folke/trouble.nvim'
 
 	"Autocomplete
-	Plug 'rafamadriz/friendly-snippets'
-	Plug 'https://github.com/L3MON4D3/LuaSnip'
-	Plug 'neovim/nvim-lspconfig'
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
-
-	Plug 'https://github.com/neovim/nvim-lspconfig'
-	Plug 'https://github.com/williamboman/nvim-lsp-installer'
 	Plug 'hrsh7th/cmp-nvim-lsp'
-	Plug 'https://github.com/j-hui/fidget.nvim'
+	Plug 'saadparwaiz1/cmp_luasnip'
+
+	Plug 'rafamadriz/friendly-snippets'
+	Plug 'https://github.com/L3MON4D3/LuaSnip'
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'https://github.com/williamboman/mason.nvim'
+	Plug 'https://github.com/williamboman/mason-lspconfig.nvim'
 
 	"	Configure
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
@@ -62,12 +63,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/wellle/targets.vim' "+
 	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
-"	Plug 'https://github.com/fgheng/winbar.nvim'
 
 	"	TEST
-	Plug 'https://github.com/dpelle/vim-LanguageTool'
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
 "	https://github.com/CRAG666/code_runner.nvim
+"	Plug 'https://github.com/fgheng/winbar.nvim'
+"	https://github.com/AndrewRadev/splitjoin.vim 
+"	https://github.com/voldikss/vim-floaterm
+"	https://github.com/windwp/nvim-autopairs
+"	https://github.com/rktjmp/lush.nvim
 	"spaceway.vim
 call plug#end()
 
