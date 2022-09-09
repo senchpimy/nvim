@@ -7,13 +7,13 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     	" File Explorer
-	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+""	Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'https://github.com/nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
     	Plug 'lmburns/lf.nvim'
     	" Enviroment 
 	Plug 'nvim-lualine/lualine.nvim'
-	Plug 'norcalli/nvim-colorizer.lua'
+	Plug 'https://github.com/RRethy/vim-hexokinase' , { 'do': 'make hexokinase' }
 	Plug 'https://github.com/glepnir/dashboard-nvim'
 	Plug 'farmergreg/vim-lastplace'
 	Plug 'Yggdroot/indentLine'

@@ -14,7 +14,7 @@ let mapleader="|"
 nmap <F2> <Cmd>set spell!<CR>
 nmap <F3> [s 
 set timeoutlen=2000
-set guifont=JetBrains\ Mono:h8
+autocmd FileType tex inoremap <i \documentclass{article}<enter>\usepackage{titlesec}<enter>\usepackage{titling}<enter>\usepackage{graphicx}<enter>\usepackage[a4paper, total={6in, 8in},margin=5em]{geometry}<enter>\usepackage{hyperref}<enter>\hypersetup{<enter>    colorlinks=true,<enter>linkcolor=blue,<enter>filecolor=magenta,<enter>urlcolor=cyan,<enter>pdftitle={Overleaf Example},<enter>pdfpagemode=FullScreen,<enter>}<enter><BS>\titleformat{\section}<enter>{\huge\bfseries}<enter>	{}<enter>{0em}<enter>{}<enter><BS>\author{}<enter>\title{}<enter><enter>\renewcommand{\maketitle}{<enter><BS>\begin{center}<enter>{\Huge\bfseries\thetitle}<enter>	<enter>	\vspace{1em}<enter>\theauthor<enter>\end{center}<enter>}<enter><enter>\begin{document}<enter><enter>\maketitle<enter>\end{document}<enter>
 "Choosewin
 nmap  n-  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
@@ -23,6 +23,8 @@ let g:choosewin_overlay_enable = 1
 
 set termguicolors
 colorscheme dracula 
+let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 "Indetlines
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
@@ -35,7 +37,7 @@ let g:mkdp_browser = 'qutebrowser'
 nmap <C-p> <cmd>MarkdownPreview<CR>
 
 nmap <space>r <cmd>Lf<CR>
-nnoremap <space>v <cmd>CHADopen<cr>
+"nnoremap <space>v <cmd>CHADopen<cr>
 nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
@@ -48,7 +50,7 @@ let g:targets_aiAI = ['<Space>a', '<Space>i', '<Space>A', '<Space>I']
 "Emmet
 let g:user_emmet_install_global = 0
 let g:user_emmet_mode='a'    "enable all function in all mode.
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,tex EmmetInstall
 let g:user_emmet_settings = {
 \  'html': {
 \    'default_attributes': {
@@ -56,8 +58,12 @@ let g:user_emmet_settings = {
 \      'textarea': {'id': v:null, 'name': v:null, 'cols': 10, 'rows': 10},
 \    },
 \    'snippets': {
-\      'descplug':"<h1>\n\t${child}|\n</h1>\n<div class=\"texto\">\n<a href=\"https://github.com/\"></a>\n</div>\n<div class=\"codigo\">\n</div>"
-\    },
+\      'descplug':"<h1>\n\t${child}|\n</h1>\n<div class=\"texto\">\n<a href=\"https://github.com/\"></a>\n</div>\n<div class=\"codigo\">\n</div>",
+\      'img':"/\begin{center}\n"
+\	." /\vspace{2em}\n"
+\	." /\includegraphics[width=45em]{./octave.png}"
+\	." /\end{center}"
+\},
 \  },
 \}
 
@@ -170,7 +176,7 @@ require("winshift").setup({
   },})
 
 --Nvim-colorizer
-require'colorizer'.setup()
+--require'colorizer'.setup()
 
 --Nvim-Tresitter
 require'nvim-treesitter.configs'.setup {
