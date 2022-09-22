@@ -36,8 +36,8 @@ autocmd FileType python IndentLinesToggle
 let g:mkdp_browser = 'qutebrowser'
 nmap <C-p> <cmd>MarkdownPreview<CR>
 
-nmap <space>r <cmd>Lf<CR>
-"nnoremap <space>v <cmd>CHADopen<cr>
+nmap <space>f <cmd>Lf<CR>
+nmap <space>r <cmd>w<CR><bar><cmd>Jaq<CR>
 nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
 nmap <space>f <cmd>Telescope find_files<CR>
