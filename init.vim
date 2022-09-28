@@ -36,11 +36,11 @@ autocmd FileType python IndentLinesToggle
 let g:mkdp_browser = 'qutebrowser'
 nmap <C-p> <cmd>MarkdownPreview<CR>
 
-nmap <space>f <cmd>Lf<CR>
+nmap <C-a> <cmd>Lf<CR>
 nmap <space>r <cmd>w<CR><bar><cmd>Jaq<CR>
 nmap <C-o> <cmd>Telescope oldfiles<CR>
 nmap <C-b> <cmd>Telescope buffers<CR>
-nmap <space>f <cmd>Telescope find_files<CR>
+nmap <space>l <cmd>Telescope find_files<CR>
 nmap nh <cmd>HopWord<CR>
 
 set mouse=a
@@ -70,6 +70,7 @@ let g:user_emmet_settings = {
 "Bufferline
 noremap <silent><TAB> :BufferLineCycleNext<CR>
 noremap <silent><S-TAB> :BufferLineCyclePrev<CR>
+noremap <C-c> <cmd>BufferLinePickClose<CR>
 
 "Harpoon
 nmap <leader>+ <Cmd>lua require("harpoon.mark").add_file()<CR> <bar> <Cmd>echo 'File added to harpoon'<CR>
@@ -125,6 +126,14 @@ require('lspconfig')['pyright'].setup{
     flags = lsp_flags,
 }
 require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['ltex'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
+require('lspconfig')['gopls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
