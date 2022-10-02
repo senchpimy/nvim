@@ -84,6 +84,51 @@ let g:livepreview_previewer = 'zathura'
 
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
+--winbar
+local navic = require("nvim-navic")
+
+--	local on_attach = function(client, bufnr)
+--	    if client.server_capabilities.documentSymbolProvider then
+--	        navic.attach(client, bufnr)
+--	    end
+--	end 
+
+require('winbar').setup({
+    enabled = true,
+
+    show_file_path = false,
+    show_symbols = true,
+
+    colors = {
+        path = '', -- You can customize colors like #c946fd
+        file_name = '',
+        symbols = '',
+    },
+
+    icons = {
+        file_icon_default = '',
+        seperator = '>',
+        editor_state = '●',
+        lock_icon = '',
+    },
+
+    exclude_filetype = {
+        'help',
+        'startify',
+        'dashboard',
+        'packer',
+        'neogitstatus',
+        'NvimTree',
+        'Trouble',
+        'alpha',
+        'lir',
+        'Outline',
+        'spectre_panel',
+        'toggleterm',
+        'qf',
+	'lf',
+    }
+})
 --lsp-config
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
@@ -95,6 +140,10 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
+    if client.server_capabilities.documentSymbolProvider then
+        navic.attach(client, bufnr)
+    end
+
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
@@ -359,7 +408,7 @@ local db = require('dashboard')
   db.preview_file_path ="~/Pictures/Gifs/1643830177621.gif"
   db.custom_footer={" "}
   db.preview_file_height = 25
-  db.preview_file_width = 100
+  db.preview_file_width = 40
   db.custom_center = {
       {icon = '  ',
       desc = 'Recently opened files                   ',
@@ -524,6 +573,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
+      on_attach = on_attach
 }
 END
 "////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////////////////

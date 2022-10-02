@@ -42,6 +42,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/xuhdev/vim-latex-live-preview'
 	Plug 'https://github.com/folke/trouble.nvim'
 
+	Plug 'https://github.com/dstein64/vim-startuptime'
+
 	"Autocomplete
 	Plug 'hrsh7th/cmp-buffer'
 	Plug 'hrsh7th/cmp-path'
@@ -67,7 +69,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	"	TEST
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
 "	https://github.com/CRAG666/code_runner.nvim
-"	Plug 'https://github.com/fgheng/winbar.nvim'
+	Plug 'https://github.com/senchpimy/winbar.nvim'
+	Plug 'SmiteshP/nvim-navic'
 "	https://github.com/AndrewRadev/splitjoin.vim 
 "	https://github.com/voldikss/vim-floaterm
 "	https://github.com/windwp/nvim-autopairs
