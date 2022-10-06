@@ -39,9 +39,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 	Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'https://github.com/p00f/nvim-ts-rainbow'
-	Plug 'https://github.com/xuhdev/vim-latex-live-preview'
+	Plug 'lervag/vimtex'
 	Plug 'https://github.com/folke/trouble.nvim'
-
 	Plug 'https://github.com/dstein64/vim-startuptime'
 
 	"Autocomplete

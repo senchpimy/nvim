@@ -79,8 +79,8 @@ nmap <leader>- <Cmd>lua require("harpoon.mark").rm_file()<CR> <bar> <Cmd>echo 'F
 "Jaq
 nmap <leader>r <Cmd>Jaq<CR>
 
-"Latex-live-preview
-let g:livepreview_previewer = 'zathura'
+"Vimtex
+let g:vimtex_view_method = 'zathura'
 
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
