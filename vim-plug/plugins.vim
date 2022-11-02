@@ -39,9 +39,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 	Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'https://github.com/p00f/nvim-ts-rainbow'
-	Plug 'lervag/vimtex'
+	Plug 'https://github.com/frabjous/knap/'
 	Plug 'https://github.com/folke/trouble.nvim'
 	Plug 'https://github.com/dstein64/vim-startuptime'
+	Plug 'https://github.com/senchpimy/winbar.nvim'
+	Plug 'SmiteshP/nvim-navic'
 
 	"Autocomplete
 	Plug 'hrsh7th/cmp-buffer'
@@ -61,19 +63,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
 	Plug 'https://github.com/sindrets/winshift.nvim' "+++
 	Plug 'mattn/emmet-vim' "+
+	Plug 'https://github.com/stevearc/vim-arduino'
 	Plug 'https://github.com/wellle/targets.vim' "+
 	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
 
 	"	TEST
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
-"	https://github.com/CRAG666/code_runner.nvim
-	Plug 'https://github.com/senchpimy/winbar.nvim'
-	Plug 'SmiteshP/nvim-navic'
-"	https://github.com/AndrewRadev/splitjoin.vim 
-"	https://github.com/voldikss/vim-floaterm
 "	https://github.com/windwp/nvim-autopairs
-"	https://github.com/rktjmp/lush.nvim
+"	Overseer
 	"spaceway.vim
 call plug#end()
 

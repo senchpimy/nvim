@@ -80,18 +80,22 @@ nmap <leader>- <Cmd>lua require("harpoon.mark").rm_file()<CR> <bar> <Cmd>echo 'F
 nmap <leader>r <Cmd>Jaq<CR>
 
 "Vimtex
-let g:vimtex_view_method = 'zathura'
+"let g:vimtex_view_method = 'zathura'
+"let g:Tex_IgnoredWarnings= 0
+let g:knap_settings = {
+    \ "textopdfviewerlaunch": "zathura --synctex-editor-command 'nvim --headless -es --cmd \"lua require('\"'\"'knaphelper'\"'\"').relayjump('\"'\"'%servername%'\"'\"','\"'\"'%{input}'\"'\"',%{line},0)\"' %outputfile%",
+    \ "textopdfviewerrefresh": "none",
+    \ "textopdfforwardjump": "zathura --synctex-forward=%line%:%column%:%srcfile% %outputfile%"
+\ }
+inoremap <silent> <F5> <C-o>:lua require("knap").process_once()<CR>
+vnoremap <silent> <F5> <C-c>:lua require("knap").process_once()<CR>
+nnoremap <silent> <F5> :lua require("knap").process_once()<CR>
 
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
 --winbar
 local navic = require("nvim-navic")
 
---	local on_attach = function(client, bufnr)
---	    if client.server_capabilities.documentSymbolProvider then
---	        navic.attach(client, bufnr)
---	    end
---	end 
 
 require('winbar').setup({
     enabled = true,
@@ -169,6 +173,10 @@ end
 local lsp_flags = {
   -- This is the default in Nvim 0.7+
   debounce_text_changes = 150,
+}
+require('lspconfig')['html'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
 }
 require('lspconfig')['pyright'].setup{
     on_attach = on_attach,
@@ -569,7 +577,8 @@ cmp.setup {
   },
 }
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+--capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
