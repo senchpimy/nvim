@@ -39,7 +39,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/MattesGroeger/vim-bookmarks'
 	Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 	Plug 'https://github.com/p00f/nvim-ts-rainbow'
-	Plug 'https://github.com/frabjous/knap/'
 	Plug 'https://github.com/folke/trouble.nvim'
 	Plug 'https://github.com/dstein64/vim-startuptime'
 	Plug 'https://github.com/senchpimy/winbar.nvim'
@@ -63,9 +62,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' } "+ 
 	Plug 'https://github.com/sindrets/winshift.nvim' "+++
 	Plug 'mattn/emmet-vim' "+
-	Plug 'https://github.com/stevearc/vim-arduino'
 	Plug 'https://github.com/wellle/targets.vim' "+
 	Plug 'akinsho/toggleterm.nvim' , {'tag':'v2.*'} "++
+	Plug 'https://github.com/kevinhwang91/nvim-ufo'
+	Plug 'https://github.com/kevinhwang91/promise-async'
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
 
 	"	TEST

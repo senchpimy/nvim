@@ -27,10 +27,14 @@ let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 "Indetlines
-let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-let g:indentLine_enabled = 0
+"let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indentLine_char="▎"
+let g:indentLine_enabled = 1
+let g:indent_blankline_show_trailing_blankline_indent = 0
+let g:indent_blankline_show_first_indent_level = 1
+let g:indent_blankline_use_treesitter = 1
+let g:indent_blankline_show_current_context = 1
 nmap <space>l <cmd>IndentLinesToggle<CR>
-autocmd FileType python IndentLinesToggle 
 
 "MarkdownPreview
 let g:mkdp_browser = 'qutebrowser'
@@ -93,6 +97,24 @@ nnoremap <silent> <F5> :lua require("knap").process_once()<CR>
 
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
+vim.opt.list = true
+ vim.opt.listchars:append "space:⋅"
+vim.opt.listchars:append "eol:↴"
+vim.g.indentLine_fileTypeExclude = {
+	"help",
+	"startify",
+	"dashboard",
+	"packer",
+	"neogitstatus",
+	"NvimTree",
+	"Trouble",
+}
+--ufo
+require('ufo').setup({
+    provider_selector = function(bufnr, filetype, buftype)
+        return {'treesitter', 'indent'}
+    end
+})
 --winbar
 local navic = require("nvim-navic")
 
@@ -241,9 +263,6 @@ require("winshift").setup({
     },
   },})
 
---Nvim-colorizer
---require'colorizer'.setup()
-
 --Nvim-Tresitter
 require'nvim-treesitter.configs'.setup {
   ensure_installed = { "c", "lua", "rust","latex","python","go","html","css","markdown" },
@@ -353,8 +372,6 @@ Hydra({
     {'J','<Cmd>wincmd J<CR>',{desc='Pasar de vertical a horizontal'}}},
 })
 
---Winbar
---require('winbar').setup()
 
 --LUALINE
 require('lualine').setup()
@@ -363,7 +380,32 @@ require('lualine').setup()
 require("which-key").setup {}
 
 --TOGGLETERM
-require("toggleterm").setup()
+local status_ok, toggleterm = pcall(require, "toggleterm")
+if not status_ok then
+  return
+end
+toggleterm.setup({
+  size = 50,
+  hide_numbers = true,
+  shade_filetypes = {},
+  shade_terminals = true,
+  shading_factor = 20,
+  start_in_insert = true,
+  insert_mappings = true,
+  persist_size = true,
+  direction = "float",
+  close_on_exit = true,
+  shell = vim.o.shell,
+  float_opts = {
+    border = "curved",
+    winblend = 0,
+    highlights = {
+      border = "Normal",
+      background = "Normal",
+    },
+  },
+})
+
 
 --Gitsigns
 require('gitsigns').setup {
@@ -415,7 +457,7 @@ local db = require('dashboard')
   db.preview_command="chafa -c 256 --fg-only --symbols braille"
   db.preview_file_path ="~/Pictures/Gifs/1643830177621.gif"
   db.custom_footer={" "}
-  db.preview_file_height = 25
+  db.preview_file_height = 20
   db.preview_file_width = 40
   db.custom_center = {
       {icon = '  ',
@@ -429,7 +471,13 @@ local db = require('dashboard')
       action =  'Lf',},
       {icon = '⇁  ',
       desc ='Harpoon                                ',
-      action =  'lua require("harpoon.ui").toggle_quick_menu()',}
+      action =  'lua require("harpoon.ui").toggle_quick_menu()',},
+      {icon = '  ',
+      desc ='Find text                                ',
+      action =  'Telescope live_grep',},
+      {icon = '  ',
+      desc ='Configuration                                ',
+      action =  'e ~/.config/nvim/init.vim',},
     }
 
 require("lf").setup({
@@ -439,7 +487,13 @@ width = 0.75, -- width of the *floating* window
 escape_quit = true,
 })
 
-require('impatient')
+
+local status_ok, impatient = pcall(require, "impatient")
+if not status_ok then
+	return
+end
+impatient.enable_profile()
+
 
 require("bufferline").setup{}
 
