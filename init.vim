@@ -12,6 +12,8 @@ set nu ru
 set spelllang=es
 let mapleader="|"
 nmap <F2> <Cmd>set spell!<CR>
+nmap zf <Cmd>UfoDisableFold<CR>
+nmap zF <Cmd>UfoEnableFold<CR>
 nmap <F3> [s 
 set timeoutlen=2000
 autocmd FileType tex inoremap <i \documentclass{article}<enter>\usepackage{titlesec}<enter>\usepackage{titling}<enter>\usepackage{graphicx}<enter>\usepackage[a4paper, total={6in, 8in},margin=5em]{geometry}<enter>\usepackage{hyperref}<enter>\hypersetup{<enter>    colorlinks=true,<enter>linkcolor=blue,<enter>filecolor=magenta,<enter>urlcolor=cyan,<enter>pdftitle={Overleaf Example},<enter>pdfpagemode=FullScreen,<enter>}<enter><BS>\titleformat{\section}<enter>{\huge\bfseries}<enter>	{}<enter>{0em}<enter>{}<enter><BS>\author{}<enter>\title{}<enter><enter>\renewcommand{\maketitle}{<enter><BS>\begin{center}<enter>{\Huge\bfseries\thetitle}<enter>	<enter>	\vspace{1em}<enter>\theauthor<enter>\end{center}<enter>}<enter><enter>\begin{document}<enter><enter>\maketitle<enter>\end{document}<enter>
@@ -20,9 +22,9 @@ nmap  n-  <Plug>(choosewin)
 let g:choosewin_overlay_enable = 1
 
 "Colores
-
 set termguicolors
-colorscheme dracula 
+"colorscheme dracula 
+colorscheme kanagawa
 let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
@@ -109,12 +111,76 @@ vim.g.indentLine_fileTypeExclude = {
 	"NvimTree",
 	"Trouble",
 }
+function vim.getVisualSelection()
+	vim.cmd('noau normal! "vy"')
+	local text = vim.fn.getreg('v')
+	vim.fn.setreg('v', {})
+
+	text = string.gsub(text, "\n", "")
+	if #text > 0 then
+		return text
+	else
+		return ''
+	end
+end
+
+
+local keymap = vim.keymap.set
+require('configs.telescopeconfigs')
+local opts = { noremap = true, silent = true }
+
+keymap('n', '<space>g', ':Telescope current_buffer_fuzzy_find<cr>', opts)
+keymap('v', '<space>g', function()
+	local text = vim.getVisualSelection()
+	tb.current_buffer_fuzzy_find({ default_text = text })
+end, opts)
+
+keymap('n', '<space>G', ':Telescope live_grep<cr>', opts)
+keymap('v', '<space>G', function()
+	local text = vim.getVisualSelection()
+	tb.live_grep({ default_text = text })
+end, opts)
+
+--Comment
+require('Comment').setup()
 --ufo
+local handler = function(virtText, lnum, endLnum, width, truncate)
+    local newVirtText = {}
+    local suffix = ('  %d '):format(endLnum - lnum)
+    local sufWidth = vim.fn.strdisplaywidth(suffix)
+    local targetWidth = width - sufWidth
+    local curWidth = 0
+    for _, chunk in ipairs(virtText) do
+        local chunkText = chunk[1]
+        local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+        if targetWidth > curWidth + chunkWidth then
+            table.insert(newVirtText, chunk)
+        else
+            chunkText = truncate(chunkText, targetWidth - curWidth)
+            local hlGroup = chunk[2]
+            table.insert(newVirtText, {chunkText, hlGroup})
+            chunkWidth = vim.fn.strdisplaywidth(chunkText)
+            -- str width returned from truncate() may less than 2nd argument, need padding
+            if curWidth + chunkWidth < targetWidth then
+                suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+            end
+            break
+        end
+        curWidth = curWidth + chunkWidth
+    end
+    table.insert(newVirtText, {suffix, 'MoreMsg'})
+    return newVirtText
+end
+
 require('ufo').setup({
+    fold_virt_text_handler = handler,
     provider_selector = function(bufnr, filetype, buftype)
         return {'treesitter', 'indent'}
     end
 })
+
+local bufnr = vim.api.nvim_get_current_buf()
+require('ufo').setFoldVirtTextHandler(bufnr, handler)
 --winbar
 local navic = require("nvim-navic")
 
@@ -374,7 +440,8 @@ Hydra({
 
 
 --LUALINE
-require('lualine').setup()
+--require('lualine').setup()
+require('configs.lualineconfigs')
 
 --WHICH-KEY
 require("which-key").setup {}

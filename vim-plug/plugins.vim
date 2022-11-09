@@ -27,11 +27,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/andymass/vim-matchup' 
 	Plug 'https://github.com/lewis6991/impatient.nvim' 
 	Plug 'https://github.com/itchyny/vim-cursorword' 
-	Plug 'https://github.com/t9md/vim-choosewin' 
 	Plug 'https://github.com/folke/which-key.nvim' 
 	Plug 'tpope/vim-surround' 
 	Plug 'https://github.com/anuvyklack/hydra.nvim' 
 	Plug 'dracula/vim', { 'as': 'dracula' }
+	Plug 'https://github.com/rebelot/kanagawa.nvim'
 	Plug 'https://github.com/ThePrimeagen/harpoon'
 	Plug 'https://github.com/RRethy/vim-illuminate'
 	Plug 'https://github.com/is0n/jaq-nvim'
@@ -67,6 +67,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/kevinhwang91/nvim-ufo'
 	Plug 'https://github.com/kevinhwang91/promise-async'
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
+	Plug 'https://github.com/numToStr/Comment.nvim'
+	Plug 'https://github.com/t9md/vim-choosewin' 
 
 	"	TEST
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
