@@ -365,7 +365,7 @@ require('jaq-nvim').setup{
       go       = "go run %",
       sh       = "sh %",
       rust       = "cargo run ",
-      tex = "pdflatex %
+      tex = "pdflatex %"
     }
   },
 
