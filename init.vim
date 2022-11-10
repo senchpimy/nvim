@@ -364,7 +364,8 @@ require('jaq-nvim').setup{
       python   = "python3 %",
       go       = "go run %",
       sh       = "sh %",
-      rust       = "cargo run "
+      rust       = "cargo run ",
+      tex = "pdflatex %
     }
   },
 
