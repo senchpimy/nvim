@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     	" Enviroment 
 	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'https://github.com/RRethy/vim-hexokinase' , { 'do': 'make hexokinase' }
-	Plug 'https://github.com/glepnir/dashboard-nvim'
+	Plug 'https://github.com/glepnir/dashboard-nvim' , { 'commit': 'e517188dab55493fb9034b4d4f1a508ccacfcd45' }
 	Plug 'farmergreg/vim-lastplace'
 	Plug 'Yggdroot/indentLine'
 	Plug 'https://github.com/dhruvasagar/vim-table-mode' 
@@ -69,7 +69,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'https://github.com/lewis6991/gitsigns.nvim' "++
 	Plug 'https://github.com/numToStr/Comment.nvim'
 	Plug 'https://github.com/t9md/vim-choosewin' 
-
+	Plug 'dccsillag/magma-nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'ellisonleao/glow.nvim'
 	"	TEST
 "	https://github.com/ziontee113/mynvimconfig/blob/master/lua/vim_schedule_demo.lua
 "	https://github.com/windwp/nvim-autopairs

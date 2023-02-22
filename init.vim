@@ -97,8 +97,21 @@ inoremap <silent> <F5> <C-o>:lua require("knap").process_once()<CR>
 vnoremap <silent> <F5> <C-c>:lua require("knap").process_once()<CR>
 nnoremap <silent> <F5> :lua require("knap").process_once()<CR>
 
+nnoremap <silent><expr> <LocalLeader>r  :MagmaEvaluateOperator<CR>
+nnoremap <silent>       <LocalLeader>rr :MagmaEvaluateLine<CR>
+xnoremap <silent>       <LocalLeader>r  :<C-u>MagmaEvaluateVisual<CR>
+nnoremap <silent>       <LocalLeader>rc :MagmaReevaluateCell<CR>
+nnoremap <silent>       <LocalLeader>rd :MagmaDelete<CR>
+nnoremap <silent>       <LocalLeader>ro :MagmaShowOutput<CR>
+let g:magma_automatically_open_output = v:false
+let g:magma_image_provider = "ueberzug"
+
 "////////////////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////
 lua << END
+require('glow').setup({
+  -- your override config
+})
+
 vim.opt.list = true
  vim.opt.listchars:append "space:⋅"
 vim.opt.listchars:append "eol:↴"
@@ -143,44 +156,45 @@ end, opts)
 
 --Comment
 require('Comment').setup()
---ufo
-local handler = function(virtText, lnum, endLnum, width, truncate)
-    local newVirtText = {}
-    local suffix = ('  %d '):format(endLnum - lnum)
-    local sufWidth = vim.fn.strdisplaywidth(suffix)
-    local targetWidth = width - sufWidth
-    local curWidth = 0
-    for _, chunk in ipairs(virtText) do
-        local chunkText = chunk[1]
-        local chunkWidth = vim.fn.strdisplaywidth(chunkText)
-        if targetWidth > curWidth + chunkWidth then
-            table.insert(newVirtText, chunk)
-        else
-            chunkText = truncate(chunkText, targetWidth - curWidth)
-            local hlGroup = chunk[2]
-            table.insert(newVirtText, {chunkText, hlGroup})
-            chunkWidth = vim.fn.strdisplaywidth(chunkText)
-            -- str width returned from truncate() may less than 2nd argument, need padding
-            if curWidth + chunkWidth < targetWidth then
-                suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
-            end
-            break
-        end
-        curWidth = curWidth + chunkWidth
-    end
-    table.insert(newVirtText, {suffix, 'MoreMsg'})
-    return newVirtText
-end
-
-require('ufo').setup({
-    fold_virt_text_handler = handler,
-    provider_selector = function(bufnr, filetype, buftype)
-        return {'treesitter', 'indent'}
-    end
-})
-
-local bufnr = vim.api.nvim_get_current_buf()
-require('ufo').setFoldVirtTextHandler(bufnr, handler)
+--UFO
+--local handler = function(virtText, lnum, endLnum, width, truncate)
+--    local newVirtText = {}
+--    local suffix = ('  %d '):format(endLnum - lnum)
+--    local sufWidth = vim.fn.strdisplaywidth(suffix)
+--    local targetWidth = width - sufWidth
+--    local curWidth = 0
+--    for _, chunk in ipairs(virtText) do
+--        local chunkText = chunk[1]
+--        local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+--        if targetWidth > curWidth + chunkWidth then
+--            table.insert(newVirtText, chunk)
+--        else
+--            chunkText = truncate(chunkText, targetWidth - curWidth)
+--            local hlGroup = chunk[2]
+--            table.insert(newVirtText, {chunkText, hlGroup})
+--            chunkWidth = vim.fn.strdisplaywidth(chunkText)
+--            -- str width returned from truncate() may less than 2nd argument, need padding
+--            if curWidth + chunkWidth < targetWidth then
+--                suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+--            end
+--            break
+--        end
+--        curWidth = curWidth + chunkWidth
+--    end
+--    table.insert(newVirtText, {suffix, 'MoreMsg'})
+--    return newVirtText
+--end
+--
+--require('ufo').setup({
+-- open_fold_hl_timeout = 150,
+--    fold_virt_text_handler = handler,
+--    provider_selector = function(bufnr, filetype, buftype)
+--        return {'treesitter', 'indent'}
+--    end
+--})
+--
+--local bufnr = vim.api.nvim_get_current_buf()
+--require('ufo').setFoldVirtTextHandler(bufnr, handler)
 --winbar
 local navic = require("nvim-navic")
 
@@ -278,6 +292,10 @@ require('lspconfig')['ltex'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
 }
+require('lspconfig')['clangd'].setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+}
 require('lspconfig')['gopls'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
@@ -294,7 +312,7 @@ require('lspconfig')['rust_analyzer'].setup{
   require("trouble").setup {}
 --Mason
 require("mason").setup()
-require("mason-lspconfig").setup({  ensure_installed = { "sumneko_lua", "rust_analyzer","bashls","gopls","ltex","marksman" }})
+require("mason-lspconfig").setup({  ensure_installed = { "rust_analyzer","bashls","gopls","ltex","marksman" }})
 --Whinshifto
 require("winshift").setup({
   highlight_moving_win = true,  -- Highlight the window being moved
@@ -355,7 +373,6 @@ require'nvim-treesitter.configs'.setup {
 require('jaq-nvim').setup{
   cmds = {
     internal = {
-      lua = "luafile %",
       vim = "source %"
     },
 
@@ -364,7 +381,8 @@ require('jaq-nvim').setup{
       python   = "python3 %",
       go       = "go run %",
       sh       = "sh %",
-      rust       = "cargo run ",
+      rust       = "cargo run .",
+      lua       = "lua %",
       tex = "pdflatex %"
     }
   },
@@ -417,7 +435,7 @@ local window_hint = [[
 Hydra({
    name = "Windows",
    hint=window_hint,
---   config = {},
+   config = {},
     mode = 'n',
     body = '<C-w>',
     heads = {
@@ -706,5 +724,6 @@ require'lspconfig'.clangd.setup {
   capabilities = capabilities,
       on_attach = on_attach
 }
+
 END
 "////////////////////////////////////////////////////////////////////**LUA**////////////////////////////////////////////////////////////////////
